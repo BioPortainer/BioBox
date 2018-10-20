@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
     cuda-compat-10-0=410.48-1 && \
     && ln -s cuda-10.0 /usr/local/cuda \
     && apt-get purge --autoremove -y curl \
-    rm -rf /var/lib/apt/lists/*
+    && apt-get clean && apt-get autoclean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
 
 USER $USER
