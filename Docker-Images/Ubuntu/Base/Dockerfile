@@ -4,7 +4,7 @@ MAINTAINER Fabiano Menegidio and LaBiOS² Team
 ############### Environment config
 ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/bash
-ENV USER user
+ENV USER biobox
 ENV UID 1000
 ENV HOME /headless
 
@@ -15,9 +15,10 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated bash vim git su
     && useradd -d $HOME --shell /bin/bash --user-group --groups adm,sudo $USER \
     && echo "$USER:$PASS" | chpasswd \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
-    && mkdir -p $HOME/data \
     && mkdir -p /.config \
+    && mkdir -p $HOME/data \
     && mkdir -p $HOME/notebooks \
+    && mkdir -p $HOME/workdir \
     && chown -R $USER:$USER $HOME \
     && echo "############### Welcome to Minimal BioBox ###############"  >> /.config/.login \
     && echo "############## User: $USER - Pass: $PASS ##############" >> /.config/.login \
