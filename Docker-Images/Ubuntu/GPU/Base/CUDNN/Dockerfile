@@ -1,4 +1,4 @@
-FROM bioportainer/base:gpu
+FROM bioportainer/base:cuda
 
 USER root
 
