@@ -1,14 +1,14 @@
 FROM bioportainer/base:gpu
 
-ENV PYENV_ROOT $HOME/.scienv/envs/pyenv
-ENV PYENV $HOME/.scienv/envs/pyenv/bin:$HOME/.scienv/envs/pyenv/shims:$HOME/.scienv/envs/pyenv/envs:$HOME/.scienv/envs/pyenv:$HOME/.scienv/envs/pyenv/plugins
-ENV PYTHON-BUILD $HOME/.scienv/envs/pyenv/plugins/python-build/bin
-ENV PYENV-DOCTOR $HOME/.scienv/envs/pyenv/plugins/pyenv-doctor/bin
-ENV PYENV-INSTALLER $HOME/.scienv/envs/pyenv/plugins/pyenv-installer/bin
-ENV PYENV-UPDATE $HOME/.scienv/envs/pyenv/plugins/pyenv-update/bin
-ENV PYENV-VIRTUALENV $HOME/.scienv/envs/pyenv/plugins/pyenv-virtualenv/bin
-ENV PYENV-WHICH-EXT $HOME/.scienv/envs/pyenv/plugins/pyenv-which-ext/bin
-ENV PATH $HOME/.scienv/bin:$HOME/.scienv/envs:$PYENV:$PATH
+ENV PYENV_ROOT $SCIENV_ROOT/envs/pyenv
+ENV PYENV $PYENV_ROOT/bin:$PYENV_ROOT/shims:$PYENV_ROOT/envs:$PYENV_ROOT/plugins
+ENV PYTHON-BUILD $PYENV_ROOT/plugins/python-build/bin
+ENV PYENV-DOCTOR $PYENV_ROOT/plugins/pyenv-doctor/bin
+ENV PYENV-INSTALLER $PYENV_ROOT/plugins/pyenv-installer/bin
+ENV PYENV-UPDATE $PYENV_ROOT/plugins/pyenv-update/bin
+ENV PYENV-VIRTUALENV $PYENV_ROOT/plugins/pyenv-virtualenv/bin
+ENV PYENV-WHICH-EXT $PYENV_ROOT/plugins/pyenv-which-ext/bin
+ENV PATH $SCIENV_ROOT/bin:$SCIENV_ROOT/envs:$PYENV:$CUDA_PATH:$PATH
 
 USER $USER
 
