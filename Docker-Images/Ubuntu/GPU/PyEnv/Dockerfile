@@ -1,4 +1,4 @@
-FROM bioportainer/base:gpu
+FROM bioportainer/scienv:gpu
 
 ENV PYENV_ROOT $SCIENV_ROOT/envs/pyenv
 ENV PYENV $PYENV_ROOT/bin:$PYENV_ROOT/shims:$PYENV_ROOT/envs:$PYENV_ROOT/plugins
