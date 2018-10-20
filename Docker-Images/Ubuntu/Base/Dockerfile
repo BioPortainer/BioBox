@@ -8,11 +8,13 @@ ENV USER biobox
 ENV UID 1000
 ENV HOME /headless
 
-RUN apt-get update && apt-get install -y --allow-unauthenticated bash vim git sudo wget zip curl pwgen \
-    parallel screen unzip \
-    && apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+RUN apt-get update && apt-get install -y --allow-unauthenticated \
+    bash vim git sudo wget zip curl pwgen parallel screen unzip \
+    && apt-get clean && apt-get autoremove \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && export PASS="$(pwgen -1 12)" \
-    && useradd -d $HOME --shell /bin/bash --user-group --groups adm,sudo $USER \
+    && useradd -d $HOME --shell /bin/bash --user-group \
+    --groups adm,sudo $USER \
     && echo "$USER:$PASS" | chpasswd \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && mkdir -p /.config \
@@ -20,8 +22,10 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated bash vim git su
     && mkdir -p $HOME/notebooks \
     && mkdir -p $HOME/workdir \
     && chown -R $USER:$USER $HOME \
-    && echo "############### Welcome to Minimal BioBox ###############"  >> /.config/.login \
-    && echo "############## User: $USER - Pass: $PASS ##############" >> /.config/.login \
+    && echo "############### Welcome to Minimal BioBox ###############" \
+    >> /.config/.login \
+    && echo "############## User: $USER - Pass: $PASS ##############" \
+    >> /.config/.login \
     && echo " "  >> /.config/.login \
     && echo " "  >> /.config/.login \
     && chown -R $USER:$USER $HOME
