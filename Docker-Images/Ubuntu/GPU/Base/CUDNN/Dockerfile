@@ -1,5 +1,7 @@
 FROM bioportainer/base:cuda
 
+ENV CUDNN_VERSION 7.3.1.20
+
 USER root
 
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
