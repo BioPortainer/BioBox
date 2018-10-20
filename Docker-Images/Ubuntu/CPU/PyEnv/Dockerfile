@@ -9,6 +9,8 @@ ENV PYENV-UPDATE $PYENV_ROOT/plugins/pyenv-update/bin
 ENV PYENV-VIRTUALENV $PYENV_ROOT/plugins/pyenv-virtualenv/bin
 ENV PYENV-WHICH-EXT $PYENV_ROOT/plugins/pyenv-which-ext/bin
 ENV PATH $SCIENV_ROOT/bin:$SCIENV_ROOT/envs:$PYENV:$PATH
+ENV PYTHON3_VERSION miniconda3-latest
+ENV PYTHON2_VERSION miniconda2-latest
 
 USER $USER
 
@@ -27,11 +29,8 @@ RUN scienv install pyenv \
     && /bin/bash -c "source $HOME/.bashrc" \
     && /bin/bash -c "source $HOME/.bash_profile" \
     && /bin/bash -c "source $PYENV_ROOT/completions/pyenv.bash" \
-    && chown -R $USER:$USER $HOME
-
-ENV PYTHON3_VERSION miniconda3-latest
-
-RUN eval "$(pyenv init -)" \
+    && chown -R $USER:$USER $HOME \
+    && eval "$(pyenv init -)" \
     && eval "$(pyenv virtualenv-init -)" \
     && pyenv install $PYTHON3_VERSION \
     && pyenv global $PYTHON3_VERSION \
@@ -43,11 +42,8 @@ RUN eval "$(pyenv init -)" \
     && conda config --add channels biobuilds \
     && conda update --all && conda clean -tipsy \
     && pyenv deactivate \
-    && chown -R $USER:$USER $HOME
-    
-ENV PYTHON2_VERSION miniconda2-latest
-
-RUN eval "$(pyenv init -)" \
+    && chown -R $USER:$USER $HOME \
+    && eval "$(pyenv init -)" \
     && eval "$(pyenv virtualenv-init -)" \
     && pyenv install $PYTHON2_VERSION \
     && pyenv global $PYTHON3_VERSION $PYTHON2_VERSION \
