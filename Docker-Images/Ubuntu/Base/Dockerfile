@@ -1,0 +1,32 @@
+FROM ubuntu:latest
+MAINTAINER Fabiano Menegidio and LaBiOS² Team
+
+############### Environment config
+ENV DEBIAN_FRONTEND noninteractive
+ENV SHELL /bin/bash
+ENV USER user
+ENV UID 1000
+ENV HOME /headless
+
+RUN apt-get update && apt-get install -y --allow-unauthenticated bash vim git sudo wget zip curl pwgen \
+    parallel screen unzip \
+    && apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && export PASS="$(pwgen -1 12)" \
+    && useradd -d $HOME --shell /bin/bash --user-group --groups adm,sudo $USER \
+    && echo "$USER:$PASS" | chpasswd \
+    && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
+    && mkdir -p $HOME/data \
+    && mkdir -p /.config \
+    && mkdir -p $HOME/notebooks \
+    && chown -R $USER:$USER $HOME \
+    && echo "############### Welcome to Minimal BioBox ###############"  >> /.config/.login \
+    && echo "############## User: $USER - Pass: $PASS ##############" >> /.config/.login \
+    && echo " "  >> /.config/.login \
+    && echo " "  >> /.config/.login \
+    && chown -R $USER:$USER $HOME
+
+WORKDIR $HOME/data
+
+USER $USER
+VOLUME ["$HOME/data", "$HOME/notebooks"]
+CMD ["/bin/bash"]
