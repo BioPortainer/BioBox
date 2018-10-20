@@ -3,9 +3,8 @@ FROM bioportainer/bioportainerbox
 USER root
 
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
-        --no-install-recommends ca-certificates \
-        libbz2-dev libc-dev-bin libc6-dev libreadline-dev \
-        libreadline6-dev libsqlite3-dev libssl-dev \
+        --no-install-recommends libbz2-dev libc-dev-bin libc6-dev \
+        libreadline-dev libreadline6-dev libsqlite3-dev libssl-dev \
         libtinfo-dev zlib1g-dev libcurl4-openssl-dev libxml2-dev \
         libxslt1-dev libyaml-dev libffi-dev
         
