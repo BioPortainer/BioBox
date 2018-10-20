@@ -3,7 +3,7 @@ FROM bioportainer/pyenv:cpu
 USER root
 
 ADD .config/start.sh /
-ADD .config/supervisord.conf /etc/
+ADD .config/supervisord.conf /.config/
 ADD .config/supervisor.conf /etc/supervisor/conf.d/
 
 RUN mkdir -p /.config/supervisord \
