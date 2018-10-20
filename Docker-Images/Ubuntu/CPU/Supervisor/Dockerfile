@@ -1,0 +1,21 @@
+FROM bioportainer/pyenv:cpu
+
+USER root
+
+ADD .config/start.sh /
+ADD .config/supervisord.conf /etc/
+ADD .config/supervisor.conf /etc/supervisor/conf.d/
+
+RUN mkdir -p /.config/supervisord \
+    && chmod +x /start.sh && chown $USER:$USER /start.sh \
+    && chown -R $USER:$USER /.config/supervisord
+
+USER $USER
+
+RUN pyenv activate $PYTHON2_VERSION \
+    && pip install supervisor \
+    && pyenv deactivate
+    
+EXPOSE 9001
+VOLUME ["/etc/supervisor/conf.d/", "/.config/"]
+CMD ["/start.sh"]
