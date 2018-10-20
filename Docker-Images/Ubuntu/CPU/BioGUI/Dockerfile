@@ -6,7 +6,7 @@ ADD BioGUI $HOME/BioGUI
 ADD .config/biogui.conf /etc/supervisor/conf.d/biogui.conf
 
 RUN chmod -R +x $HOME/BioGUI/conf/scripts/ \
-    && chown -R $USER:$USER $HOME/BioGUI \
+    && chown -R $USER:$USER $HOME/BioGUI
 
 USER $USER
 
