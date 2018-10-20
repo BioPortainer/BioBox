@@ -10,8 +10,8 @@ ENV HOME /headless
 
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
     bash vim git sudo wget zip curl pwgen parallel screen unzip \
-    && apt-get clean && apt-get autoremove \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && apt-get clean && apt-get autoclean && apt-get autoremove \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/ \
     && export PASS="$(pwgen -1 12)" \
     && useradd -d $HOME --shell /bin/bash --user-group \
     --groups adm,sudo $USER \
