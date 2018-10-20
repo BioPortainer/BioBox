@@ -1,1 +1,1 @@
-
+FROM bioportainer/pyenv:cpu
