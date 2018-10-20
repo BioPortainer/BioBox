@@ -6,8 +6,8 @@ ENV USER biobox
 ENV HOME /workdir
 ENV UID 1000
 
-RUN apk update && apk add --no-cache bash vim git sudo wget zip curl pwgen \
-    parallel screen unzip \
+RUN apk update && apk add --no-cache \
+    bash vim git sudo wget zip curl pwgen parallel screen unzip \
     && rm -rf /var/cache/apk/* && rm -rf /tmp/ \
     && export PASS="$(pwgen -1 12)" \
     && adduser -s /bin/bash -u $UID -h $HOME -D $USER \
@@ -17,8 +17,10 @@ RUN apk update && apk add --no-cache bash vim git sudo wget zip curl pwgen \
     && mkdir -p /.config \
     && mkdir -p $HOME/notebooks \
     && chown -R $USER:$USER $HOME \
-    && echo "############### Welcome to Minimal BioBox ###############"  >> /.config/.login \
-    && echo "############## User: $USER - Pass: $PASS ##############" >> /.config/.login \
+    && echo "############### Welcome to Minimal BioBox ###############" \
+    >> /.config/.login \
+    && echo "############## User: $USER - Pass: $PASS ##############" \
+    >> /.config/.login \
     && echo " "  >> /.config/.login \
     && echo " "  >> /.config/.login \
     && chown -R $USER:$USER $HOME
