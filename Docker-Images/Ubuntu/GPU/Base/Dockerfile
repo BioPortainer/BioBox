@@ -1,4 +1,4 @@
-FROM bioportainer/bioportainerbox
+FROM bioportainer/biobox:latest
 
 USER root
 
