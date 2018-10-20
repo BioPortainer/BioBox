@@ -5,9 +5,7 @@ USER root
 
 RUN apt-get update && apt-get install -y libbz2-dev libc-dev-bin libc6-dev \
         libreadline-dev libreadline6-dev libsqlite3-dev libssl-dev libtinfo-dev \
-        zlib1g-dev libcurl4-openssl-dev libxml2-dev libxslt1-dev libyaml-dev libffi-dev \
-        && apt-get clean && apt-get autoclean && apt-get autoremove \
-        && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
+        zlib1g-dev libcurl4-openssl-dev libxml2-dev libxslt1-dev libyaml-dev libffi-dev
         
 USER $USER        
         
@@ -27,3 +25,8 @@ RUN git clone https://github.com/LaBiOS/scienv.git $HOME/.scienv \
         && eval "$($HOME/.scienv/bin/scienv init -)" \
         && /bin/bash -c "exec $SHELL -l" \
         && chown -R $USER:$USER $HOME
+
+USER root
+
+RUN apt-get clean && apt-get autoclean && apt-get autoremove \
+        && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
