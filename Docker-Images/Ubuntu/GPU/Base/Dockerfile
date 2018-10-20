@@ -7,7 +7,8 @@ ENV CUDA_PKG_VERSION 10-0=$CUDA_VERSION-1
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
 ENV NVIDIA_REQUIRE_CUDA "cuda>=10.0 brand=tesla,driver>=384,driver<385"
-ENV PATH /usr/local/cuda/bin:${PATH}
+ENV CUDA_PATH /usr/local/cuda/bin
+ENV PATH ${CUDA_PATH}:${PATH}
 
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
     --no-install-recommends gnupg2 curl \
