@@ -1,4 +1,4 @@
-FROM bioportainer/bioportainerbox
+FROM bioportainer/base:cpu
 
 USER root
 
