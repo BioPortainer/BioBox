@@ -4,7 +4,6 @@ USER root
 
 ADD BioGUI $HOME/BioGUI
 ADD .config/biogui.conf /etc/supervisor/conf.d/biogui.conf
-ADD .config/docker /usr/local/bin/
 
 RUN chmod -R +x $HOME/BioGUI/conf/scripts/ \
     && chown -R $USER:$USER $HOME/BioGUI \
