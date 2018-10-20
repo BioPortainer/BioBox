@@ -9,7 +9,7 @@ ENV UID 1000
 ENV HOME /headless
 
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
-     --no-install-recommends bash git sudo zip pwgen parallel screen \
+    --no-install-recommends bash git sudo zip pwgen parallel screen \
     && apt-get clean && apt-get autoclean && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/ \
     && export PASS="$(pwgen -1 12)" \
