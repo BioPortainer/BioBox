@@ -12,7 +12,9 @@ RUN mkdir -p /.config/supervisord \
 
 USER $USER
 
-RUN pyenv activate $PYTHON2_VERSION \
+RUN eval "$(pyenv init -)" \
+    && eval "$(pyenv virtualenv-init -)" \
+    && pyenv activate $PYTHON2_VERSION \
     && pip install supervisor \
     && pyenv deactivate
     
