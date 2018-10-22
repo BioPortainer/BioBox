@@ -1,4 +1,4 @@
-FROM bioportainer/supervisor:cudnn
+FROM bioportainer/supervisord:cudnn
 
 USER root
 
