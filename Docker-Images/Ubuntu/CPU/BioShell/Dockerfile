@@ -2,10 +2,10 @@ FROM bioportainer/supervisor:cpu
 
 USER root
 
-ADD .config/butterfly.sh /
-ADD .config/butterfly.conf /etc/supervisor/conf.d/butterfly.conf
+ADD .config/bioshell.sh /
+ADD .config/bioshell.conf /etc/supervisor/conf.d/bioshell.conf
 
-RUN chmod +x /butterfly.sh && chown $USER:$USER /butterfly.sh
+RUN chmod +x /bioshell.sh && chown $USER:$USER /bioshell.sh
 
 USER $USER
 
