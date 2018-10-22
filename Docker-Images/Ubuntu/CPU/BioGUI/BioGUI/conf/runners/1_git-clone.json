@@ -32,8 +32,15 @@
     },
     {
       "name": "Verbose",
-      "param": "-h",
+      "param": "-v",
       "description": "Verbose.",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Progress",
+      "param": "--progress",
+      "description": "Progress report.",
       "no_value": true,
       "default": true
     }
