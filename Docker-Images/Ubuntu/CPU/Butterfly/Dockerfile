@@ -1,10 +1,8 @@
-FROM bioportainer/supervisord:cpu
+FROM bioportainer/biogui:cpu
 
 USER root
 
 ADD .config/butterfly.conf /etc/supervisor/conf.d/butterfly.conf
-
-RUN chmod -R +x $HOME/BioGUI/conf/scripts/
 
 USER $USER
 
@@ -14,4 +12,4 @@ RUN eval "$(pyenv init -)" \
     && pip install butterfly \
     && pyenv deactivate
     
-EXPOSE 57575
+EXPOSE 5757
