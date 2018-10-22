@@ -1,4 +1,4 @@
-FROM bioportainer/biogui:cpu
+FROM bioportainer/pyenv:cpu
 
 RUN eval "$(pyenv init -)" \
     && eval "$(pyenv virtualenv-init -)" \
