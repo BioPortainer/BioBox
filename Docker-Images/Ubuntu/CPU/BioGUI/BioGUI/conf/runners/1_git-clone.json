@@ -1,5 +1,5 @@
 {
-  "name": "1. Clone GIT Repository",
+  "name": "01. Clone GIT Repository",
   "script_path": "/BioGUI/conf/scripts/git-clone.sh",
   "description": "GIT Clone Repository",
   "working_directory": "/headless/data",
