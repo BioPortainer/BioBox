@@ -24,10 +24,10 @@
       "description": "Help.",
       "no_value": true,
       "default": false
-    }.
+    },
     {
-      "name": "Help",
-      "param": "--verbosa",
+      "name": "Verbose",
+      "param": "--verbose",
       "description": "Use once for info, twice for debug, three times for trace.",
       "no_value": true,
       "default": true
