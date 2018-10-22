@@ -1,7 +1,7 @@
 {
-  "name": "4. Conda Install Package",
-  "script_path": "/BioGUI/conf/scripts/conda-install.sh",
-  "description": "Conda install package into an existing environment",
+  "name": "4. Conda environment create",
+  "script_path": "/BioGUI/conf/scripts/conda-env-create.sh",
+  "description": "Create the environment from the environment.yml file",
   "working_directory": "/headless/data",
   "parameters": [
     {
@@ -24,6 +24,13 @@
       "description": "Help.",
       "no_value": true,
       "default": false
+    }.
+    {
+      "name": "Help",
+      "param": "--verbosa",
+      "description": "Use once for info, twice for debug, three times for trace.",
+      "no_value": true,
+      "default": true
     }
   ]
 }
