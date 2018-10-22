@@ -1,4 +1,4 @@
-FROM bioportainer/supervisor:cpu
+FROM bioportainer/supervisord:cpu
 
 USER root
 
