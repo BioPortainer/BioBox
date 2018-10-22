@@ -15,4 +15,4 @@ RUN eval "$(pyenv init -)" \
     && pip install butterfly \
     && pyenv deactivate
     
-EXPOSE 5757
+EXPOSE 9002
