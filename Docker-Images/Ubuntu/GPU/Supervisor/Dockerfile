@@ -1,4 +1,4 @@
-FROM bioportainer/pyenv:cuda
+FROM bioportainer/pipetools:cuda
 
 USER root
 
