@@ -3,15 +3,15 @@ FROM bioportainer/biogui:cpu
 USER root
 
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
-    --no-install-recommends build-essential 
+    --no-install-recommends build-essential
     
 USER $USER
 
 RUN eval "$(pyenv init -)" \
     && eval "$(pyenv virtualenv-init -)" \
     && pyenv activate $PYTHON3_VERSION \
-    && pip install snakemake \
-    && pyenv deactivate
+    && conda install -c bioconda -c conda-forge snakemakeake \
+    && conda clean -tipsy && pyenv deactivate
 
 USER root
 
