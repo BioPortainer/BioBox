@@ -1,0 +1,29 @@
+{
+  "name": "4. Conda Install Package",
+  "script_path": "/BioGUI/conf/scripts/conda-install.sh",
+  "description": "Conda install package into an existing environment",
+  "working_directory": "/headless/data",
+  "parameters": [
+    {
+      "name": "package_spec",
+      "param": "--file",
+      "description": "Packages to install or update in the conda environment.",
+      "type": "file_upload",
+      "required": true
+    },
+    {
+      "name": "--yes",
+      "param": "--yes",
+      "description": "Do not ask for confirmation.",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}
