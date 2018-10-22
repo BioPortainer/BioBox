@@ -1,0 +1,41 @@
+{
+  "name": "1. Clone GIT Repository",
+  "script_path": "/root/script-server/conf/scripts/git-clone.sh",
+  "description": "GIT Clone Repository",
+  "working_directory": "/root/workdir",
+  "parameters": [
+    {
+      "name": "GIT Repository",
+      "param": "clone",
+      "description": "GIT Repository",
+      "type": "text",
+      "required": true 
+    },
+    {                  
+      "name": "Origin",   
+      "param": "--origin",                                  
+      "description": "use <name> instead of 'origin' to track upstream",
+      "required": false
+    },
+    {
+      "name": "Branch",
+      "param": "--branch",
+      "description": "checkout <branch> instead of the remote's HEAD",  
+      "required": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Verbose",
+      "param": "-h",
+      "description": "Verbose.",
+      "no_value": true,
+      "default": true
+    }
+  ]
+}
