@@ -1,0 +1,36 @@
+{
+  "name": "5. Conda environment create",
+  "script_path": "/BioGUI/conf/scripts/conda-install.sh",
+  "description": "To use the spec file to install its listed packages into an existing environment",
+  "working_directory": "/headless/data",
+  "parameters": [
+    {
+      "name": "package_spec",
+      "param": "--file",
+      "description": "Packages to install or update in the conda environment.",
+      "type": "file_upload",
+      "required": true
+    },
+    {
+      "name": "Default confirmation",
+      "param": "--yes",
+      "description": "Do not ask for confirmation.",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Verbose",
+      "param": "--verbose",
+      "description": "Use once for info, twice for debug, three times for trace.",
+      "no_value": true,
+      "default": true
+    }
+  ]
+}
