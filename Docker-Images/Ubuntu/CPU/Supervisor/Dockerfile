@@ -1,4 +1,4 @@
-FROM bioportainer/pyenv:cpu
+FROM bioportainer/pipetools:cpu
 
 USER root
 
