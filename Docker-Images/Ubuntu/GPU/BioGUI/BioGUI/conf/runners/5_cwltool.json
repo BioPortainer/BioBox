@@ -1,5 +1,5 @@
 {
-  "name": "5_Common Workflow Language Tool",
+  "name": "5. Common Workflow Language Tool",
   "script_path": "/headless/BioGUI/conf/scripts/cwltool.sh",
   "description": "Common Workflow Language Tool",
   "working_directory": "/headless/data",
