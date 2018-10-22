@@ -35,14 +35,14 @@
       "param": "--verbose",
       "description": "Verbose.",
       "no_value": true,
-      "default": false
+      "default": true
     },
     {
       "name": "Progress",
       "param": "--progress",
       "description": "Progress report.",
       "no_value": true,
-      "default": false
+      "default": true
     }
   ]
 }
