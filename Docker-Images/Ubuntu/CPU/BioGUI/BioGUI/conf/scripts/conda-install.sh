@@ -1,3 +1,3 @@
 #!/bin/bash
 
-conda create $@
+conda env create $@
