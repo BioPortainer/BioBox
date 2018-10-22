@@ -1,5 +1,5 @@
 {
-  "name": "5. Conda environment create",
+  "name": "05. Conda Install Packages",
   "script_path": "/BioGUI/conf/scripts/conda-install.sh",
   "description": "To use the spec file to install its listed packages into an existing environment",
   "working_directory": "/headless/data",
