@@ -25,24 +25,24 @@
     },
     {
       "name": "Help",
-      "param": "-h",
+      "param": "--help",
       "description": "Help.",
       "no_value": true,
       "default": false
     },
     {
       "name": "Verbose",
-      "param": "-v",
+      "param": "--verbose",
       "description": "Verbose.",
       "no_value": true,
-      "default": true
+      "default": false
     },
     {
       "name": "Progress",
       "param": "--progress",
       "description": "Progress report.",
       "no_value": true,
-      "default": true
+      "default": false
     }
   ]
 }
