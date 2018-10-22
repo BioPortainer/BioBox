@@ -1,4 +1,4 @@
-FROM bioportainer/pyenv:cudnn
+FROM bioportainer/pipetools:cudnn
 
 USER root
 
