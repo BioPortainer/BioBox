@@ -15,7 +15,7 @@ USER $USER
 RUN eval "$(pyenv init -)" \
     && eval "$(pyenv virtualenv-init -)" \
     && pyenv activate $PYTHON2_VERSION \
-    && pip install supervisor superlance \
+    && pip install supervisor superlance superslacker \
     && pyenv deactivate
     
 EXPOSE 9001
