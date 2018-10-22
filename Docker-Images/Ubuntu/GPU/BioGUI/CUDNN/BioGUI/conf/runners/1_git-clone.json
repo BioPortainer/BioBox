@@ -1,0 +1,48 @@
+{
+  "name": "1. Clone GIT Repository",
+  "script_path": "/headless/BioGUI/conf/scripts/git-clone.sh",
+  "description": "GIT Clone Repository",
+  "working_directory": "/headless/data",
+  "parameters": [
+    {
+      "name": "GIT Repository",
+      "param": "clone",
+      "description": "GIT Repository",
+      "type": "text",
+      "required": false 
+    },
+    {                  
+      "name": "Origin",   
+      "param": "--origin",                                  
+      "description": "use <name> instead of 'origin' to track upstream",
+      "required": false
+    },
+    {
+      "name": "Branch",
+      "param": "--branch",
+      "description": "checkout <branch> instead of the remote's HEAD",  
+      "required": false
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Verbose",
+      "param": "--verbose",
+      "description": "Verbose.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Progress",
+      "param": "--progress",
+      "description": "Progress report.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

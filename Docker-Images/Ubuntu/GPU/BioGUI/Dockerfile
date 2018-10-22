@@ -1,4 +1,4 @@
-FROM bioportainer/supervisord:cuda
+FROM bioportainer/bioshell:cuda
 
 USER root
 
