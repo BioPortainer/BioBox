@@ -1,3 +1,3 @@
 #!/bin/bash
 
-conda install $@
+conda create $@
