@@ -2,14 +2,14 @@
   "name": "2. Remove Local Repository",
   "script_path": "/BioGUI/conf/scripts/rm.sh",
   "description": "Remove Local Repository",
-  "working_directory": "/headless/workdir",
+  "working_directory": "/headless/data",
   "parameters": [
     {
       "name": "Remove Repository",
       "description": "List Repositories",
       "type": "list",
       "values": {
-        "script": "ls /headless/workdir"
+        "script": "ls /headless/data"
       },
       "required": true 
     }
