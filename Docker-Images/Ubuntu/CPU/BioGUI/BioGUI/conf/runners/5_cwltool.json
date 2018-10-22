@@ -80,6 +80,17 @@
       "description": "Verbose.",
       "no_value": true,
       "default": false
+    },
+    {
+      "name": "Constant Text",
+      "description": "Constant value",
+      "param": "--const_text",
+      "constant": true,
+      "default": "constOne"
+    },
+    {
+      "name": "Simple Text",
+      "description": "Parameter Four"
     }
   ]
 }
