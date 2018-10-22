@@ -1,0 +1,16 @@
+{
+  "name": "9. Conda Install Package",
+  "script_path": "/BioGUI/conf/scripts/conda-install.sh",
+  "description": "Conda install package into an existing environment",
+  "working_directory": "/headless/data",
+  "parameters": [
+    {
+      "name": "targets",
+      "description": "Targets to build. May be rules or files.",
+      "type": "list",
+      "values": {
+        "script": "ls /headless/data"
+      }
+    }
+  ]
+}
