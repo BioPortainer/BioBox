@@ -3,7 +3,7 @@
 echo "Clone Repository: "$@"..."
 echo " "
 echo " "
-pv /bin/bash git $@
+git $@
 echo " "
 echo " "
 echo "Cloning Repository Finish."
