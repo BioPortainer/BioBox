@@ -12,7 +12,7 @@
       "required": true
     },
     {
-      "name": "--yes",
+      "name": "Default confirmation",
       "param": "--yes",
       "description": "Do not ask for confirmation.",
       "no_value": true,
