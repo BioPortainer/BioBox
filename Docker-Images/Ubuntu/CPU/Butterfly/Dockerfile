@@ -5,7 +5,7 @@ USER root
 ADD .config/butterfly.sh /
 ADD .config/butterfly.conf /etc/supervisor/conf.d/butterfly.conf
 
-RUN chmod +x /start.sh && chown $USER:$USER /start.sh
+RUN chmod +x /butterfly.sh && chown $USER:$USER /butterfly.sh
 
 USER $USER
 
