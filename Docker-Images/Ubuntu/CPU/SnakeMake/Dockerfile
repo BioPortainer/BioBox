@@ -3,11 +3,8 @@ FROM bioportainer/biogui:cpu
 USER root
 
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
-    --no-install-recommends build-essential \
-    && apt-get purge build-essential && apt-get clean \
-    && apt-get autoclean && apt-get autoremove \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
-
+    --no-install-recommends build-essential 
+    
 USER $USER
 
 RUN eval "$(pyenv init -)" \
@@ -18,7 +15,8 @@ RUN eval "$(pyenv init -)" \
 
 USER root
 
-RUN apt-get clean && apt-get autoclean && apt-get autoremove \
+RUN apt-get purge -y build-essential && apt-get clean \
+    && apt-get autoclean && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
 
 USER $USER
