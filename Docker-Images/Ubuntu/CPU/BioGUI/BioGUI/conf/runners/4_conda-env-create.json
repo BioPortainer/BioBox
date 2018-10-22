@@ -12,13 +12,6 @@
       "required": true
     },
     {
-      "name": "Default confirmation",
-      "param": "--yes",
-      "description": "Do not ask for confirmation.",
-      "no_value": true,
-      "default": true
-    },
-    {
       "name": "Help",
       "param": "--help",
       "description": "Help.",
