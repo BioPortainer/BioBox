@@ -16,7 +16,7 @@ RUN eval "$(pyenv init -)" \
 USER root
 
 RUN apt-get purge -y build-essential && apt-get clean \
-    && apt-get autoclean && apt-get autoremove \
+    && apt-get autoclean && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
 
 USER $USER
