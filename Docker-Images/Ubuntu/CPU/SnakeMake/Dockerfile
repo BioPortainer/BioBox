@@ -10,7 +10,7 @@ USER $USER
 RUN eval "$(pyenv init -)" \
     && eval "$(pyenv virtualenv-init -)" \
     && pyenv activate $PYTHON3_VERSION \
-    && conda install -c bioconda -c conda-forge snakemake \
+    && conda install -y -c bioconda -c conda-forge snakemake \
     && conda clean -tipsy && pyenv deactivate
 
 USER root
