@@ -1,5 +1,5 @@
 {
-  "name": "5. SnakeMake Minimal Tool",
+  "name": "10. SnakeMake Minimal Tool",
   "script_path": "/BioGUI/conf/scripts/snakemake.sh",
   "description": "SnakeMake Minimal Tool",
   "working_directory": "/headless/data",
