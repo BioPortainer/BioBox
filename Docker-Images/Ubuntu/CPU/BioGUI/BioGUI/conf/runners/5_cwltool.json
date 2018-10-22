@@ -66,6 +66,20 @@
       "description": "Do not delete Docker container used by jobs after they exit",
       "no_value": true,
       "default": true
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Verbose",
+      "param": "--verbose",
+      "description": "Verbose.",
+      "no_value": true,
+      "default": false
     }
   ]
 }
