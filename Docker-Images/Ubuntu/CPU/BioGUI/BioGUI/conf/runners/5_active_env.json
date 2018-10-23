@@ -11,7 +11,8 @@
       "values": [
         "miniconda3-latest",
         "miniconda2-latest"
-      ]
+      ],
+      "required": true
     },
     {
       "name": "Conda Env",
