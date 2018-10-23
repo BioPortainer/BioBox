@@ -18,7 +18,7 @@
       "description": "List Work Repositories",
       "type": "list",
       "values": {
-        "script": "ls -d /headless/data"
+        "script": "ls -d $HOME/data"
       },
       "required": true
     }
