@@ -14,8 +14,12 @@
       "required": true
     },
     {
-      "name": "Active Env:",
-      "description": "Active Env"
+      "name": "Virtual Envs",
+      "description": "List Virtual Envs",
+      "type": "list",
+      "values": {
+        "script": "basename $(pwd)"
+      }
     }
   ]
 }
