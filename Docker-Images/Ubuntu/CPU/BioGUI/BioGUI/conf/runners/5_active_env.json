@@ -10,7 +10,7 @@
       "type": "list",
       "values": [
         "PipelineMicrobiome16S"
-      ]
+      ],
     },
     {
       "name": "SciEnv/PyEnv List",
