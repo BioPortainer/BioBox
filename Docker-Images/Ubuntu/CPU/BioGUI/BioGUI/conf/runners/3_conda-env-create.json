@@ -5,13 +5,11 @@
   "working_directory": "/headless/data",
   "parameters": [
     {
-      "name": "Package Spec",
+      "name": "package_spec",
       "param": "--file",
       "description": "Packages to install or update in the conda environment.",
-      "type": "list",
-      "values": {
-        "script": "ls *.yaml"
-      }
+      "type": "file_upload",
+      "required": true
     },
     {
       "name": "Help",
