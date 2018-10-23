@@ -14,11 +14,11 @@
       ]
     },
     {
-      "name": "Conda Envs",
-      "description": "List Conda Environment",
+      "name": "Choose your work repository",
+      "description": "List Work Repositories",
       "type": "list",
       "values": {
-        "script": "ls -d /headless/data"
+        "script": "ls /headless/data"
       },
       "required": true
     }
