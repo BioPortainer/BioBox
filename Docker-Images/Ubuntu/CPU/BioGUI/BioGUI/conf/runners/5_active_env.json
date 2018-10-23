@@ -5,13 +5,23 @@
   "working_directory": "/headless/data",
   "parameters": [
     {
-      "name": "Choose your work repository",
-      "description": "List Work Repositories",
+      "name": "Conda Env",
+      "description": "List Conda Env",
       "type": "list",
       "values": {
         "script": "ls /headless/data"
       },
       "required": true
+    },
+    {
+      "name": "Simple List",
+      "param": "--simple_list",
+      "description": "Parameter Five",
+      "type": "list",
+      "values": [
+        "val1",
+        "val3"
+      ]
     }
   ]
 }
