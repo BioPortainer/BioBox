@@ -1,3 +1,4 @@
 #!/bin/bash
 
-pyenv activate $@
+pyenv activate $1
+conda activate $2
