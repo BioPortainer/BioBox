@@ -5,8 +5,17 @@
   "working_directory": "/headless/data",
   "parameters": [
     {
-      "name": "Virtual Envs",
-      "description": "List Virtual Envs",
+      "name": "SciEnv/PyEnv List",
+      "description": "List SciEnv/PyEnv EnvironmenE",
+      "type": "list",
+      "values": [
+        "miniconda3-latest",
+        "miniconda2-latest"
+      ]
+    },
+    {
+      "name": "Conda Envs",
+      "description": "List Conda Environment",
       "type": "list",
       "values": {
         "script": "basename $(pwd)"
