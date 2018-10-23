@@ -153,7 +153,9 @@ Type: string
 Allows to pass only a flag to the script, without any value. param property is required in this case. This infers parameter type as boolean (the type property should be ommitted)
 
 Required: no
+
 Type: boolean
+
 Default: false
 
 ##   - description
