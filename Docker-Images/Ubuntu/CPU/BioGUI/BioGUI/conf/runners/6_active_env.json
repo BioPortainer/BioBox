@@ -1,0 +1,17 @@
+{
+  "name": "06. Enable Virtual Env",
+  "script_path": "/BioGUI/conf/scripts/active_env.sh",
+  "description": "Enable Python virtual environment (Conda)",
+  "working_directory": "/headless/data",
+  "parameters": [
+    {
+      "name": "Remove Repository",
+      "description": "List Repositories",
+      "type": "list",
+      "values": {
+        "script": "pyenv versions"
+      },
+      "required": true 
+    }
+  ]
+}
