@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
     >> /.config/.login \
     && echo " "  >> /.config/.login \
     && echo " "  >> /.config/.login \
-    && chown -R $USER:$USER $HOME && chown -R $USER:$USER /.config \
+    && chown -R $USER:$USER $HOME && chown -R $USER:$USER /.config
 
 WORKDIR $HOME/workdir/data
 
