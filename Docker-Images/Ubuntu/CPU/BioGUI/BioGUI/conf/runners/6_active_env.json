@@ -9,7 +9,7 @@
       "description": "List Repositories",
       "type": "list",
       "values": {
-        "script": "pyenv versions"
+        "script": "pyenv versions |  cut -d" " -f2"
       },
       "required": true 
     }
