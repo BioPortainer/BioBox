@@ -5,12 +5,16 @@
   "working_directory": "/headless/data",
   "parameters": [
     {
-      "name": "SciEnv/PyEnv List",
-      "description": "List SciEnv/PyEnv EnvironmenE",
+      "name": "Conda Env",
+      "description": "Parameter Four"
+    },
+    {
+      "name": "Simple List",
+      "description": "Parameter Five",
       "type": "list",
       "values": [
-        "miniconda3-latest",
-        "miniconda2-latest"
+        "val1",
+        "val3",
       ]
     }
   ]
