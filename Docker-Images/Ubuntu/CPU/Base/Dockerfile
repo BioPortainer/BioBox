@@ -13,7 +13,7 @@ ENV LANG C.UTF-8
 
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
     --no-install-recommends bash git zip wget pwgen parallel screen \
-    pv ca-certificates tmux fuse gosu locale \
+    pv ca-certificates tmux fuse gosu locales \
     && apt-get clean && apt-get autoclean && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/ \
     && locale-gen en_US.UTF-8 \
