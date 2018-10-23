@@ -136,54 +136,54 @@ Example:
 		"param": "-b"
 	}
 ]
-   - name
+##   - name
 The name of the parameter, which will be shown to the user.
 Required for non-constant parameters
 
 Required: yes (for non-constant parameters)
 Type: string
 
-   - param
+##  - param
 Can be used for specifying flag for the parameter (e.g. -p in script.sh -p myval). If omitted, parameter will be position based
 
 Required: no
 Type: string
 
-   - no_value
+##   - no_value
 Allows to pass only a flag to the script, without any value. param property is required in this case. This infers parameter type as boolean (the type property should be ommitted)
 
 Required: no
 Type: boolean
 Default: false
 
-   - description
+##   - description
 User-friendly description of the parameter, shown to the user
 
 Required: no
 Type: string
 
-   - required
+##   - required
 Marks parameter as required for the user
 
 Required: no
 Type: boolean
 Default: false
 
-   - constant
+##   - constant
 Don't show the parameter to a user, but pass it to a script with the value of default field
 
 Required: no
 Type: boolean
 Default: false
 
-   - default
+##   - default
 Default value shown to a user
 Environment variables can be specified with $$ (e.g. "default": "$$HOME")
 
 Required: no (for constants yes)
 Type: depends on the parameter type
 
-   - type
+##   - type
 Parameter type, which affects how a parameter is shown to a user (checkbox, text field, select box, etc.) and how it's passed to a script (for example as a single argument or as multiple arguments)
 If no_value is set to true, then the type is ignored and always is boolean
 For detail description of each type and it's supported properties see the section after properties description.
@@ -193,28 +193,28 @@ Required: no
 Type: string
 Default: "text"
 
-   - max
+##   - max
 Maximal allowed value
 
 Required: no
 Supported types: int
 Type: string
 
-   - min
+##   - min
 Mininal allowed value
 
 Required: no
 Supported types: int
 Type: string
 
-   - secure
+##   - secure
 Don't show value on server anywhere, replace it with a mask
 
 Required: no
 Type: boolean
 Default: false
 
-   - values
+##  - values
 List of allowed values for the parameter. Can be either predefined values or a result from another script invocation
 
 Required: yes (for list)
