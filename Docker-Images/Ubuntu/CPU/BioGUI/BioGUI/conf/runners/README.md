@@ -29,10 +29,10 @@ Configurable properties:
 # name
 User-friendly script name. Will be displayed to user
 
-Required: no
-Type: string
-Default: the filename without extension
-Example: "name": "My example script"
+Required: no </br>
+Type: string </br>
+Default: the filename without extension </br>
+Example: "name": "My example script" </br>
 
 # script_path
 Path to the script (relative to working directory) OR just a command.
