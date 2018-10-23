@@ -223,27 +223,28 @@ Type: array or object
 Example1: "values": [ "Apple", "Orange", "Banana" ]
 Example2: "values": { "script": "ls /home/me/projects" }
 
-Parameter types
-text
+Parameter types:
+
+- text
 Simple text field. The value is passed to a script as it is.
 If parameter is secure, text field on UI will be masked.
 Default value type: string
 
-int
+- int
 The same as text, but performs number validation.
 Can be constrained with min and max properties
 Default value type: string or integer
 
-boolean (no_value)
+- boolean (no_value)
 Parameter is shown to a user as a checkbox. Since this is supported only for no_value parameters (flags only), value is not passed to a script
 Default value type: boolean
 
-list
+- list
 Provides to user a list with allowed values (as a combobox).
 Allowed values should be specified with values property
 Default value type: string
 
-file_upload
+- file_upload
 Allows user to upload a file to the server as a parameter.
 The file is uploaded to the server and stored in a temp folder. Then the file is passed to a script as an absolute path
 secure flag has no effect for this type
