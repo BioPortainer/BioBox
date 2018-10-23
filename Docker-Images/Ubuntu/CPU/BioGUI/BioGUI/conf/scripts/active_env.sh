@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pyenv activate $2
+pyenv activate $@
