@@ -4,28 +4,29 @@ Examples of configuration files can be found in stable/testing/configs or see a 
 
 Configurable properties:
 
-name
-script_path
-description
-working_directory
-allowed_users
-output_files
-requires_terminal
-bash_formatting
-parameters
-name
-param
-no_value
-description
-required
-constant
-default
-type
-max
-min
-secure
-values
-name
+- name
+- script_path
+- description
+- working_directory
+- allowed_users
+- output_files
+- requires_terminal
+- bash_formatting
+- parameters
+	- name
+	- param
+	- no_value
+	- description
+	- required
+	- constant
+	- default
+	- type
+	- max
+	- min
+	- secure
+	- values
+
+# name
 User-friendly script name. Will be displayed to user
 
 Required: no
@@ -33,7 +34,7 @@ Type: string
 Default: the filename without extension
 Example: "name": "My example script"
 
-script_path
+# script_path
 Path to the script (relative to working directory) OR just a command.
 
 Required: yes
