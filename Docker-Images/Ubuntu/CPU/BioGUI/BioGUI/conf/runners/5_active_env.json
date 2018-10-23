@@ -9,17 +9,9 @@
       "description": "List Virtual Envs",
       "type": "list",
       "values": {
-        "script": "pyenv versions"
+        "script": "basename $(pwd)"
       },
       "required": true
-    },
-    {
-      "name": "Virtual Envs",
-      "description": "List Virtual Envs",
-      "type": "list",
-      "values": {
-        "script": "basename $(pwd)"
-      }
     }
   ]
 }
