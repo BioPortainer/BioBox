@@ -9,18 +9,13 @@
       "description": "List SciEnv/PyEnv EnvironmenE",
       "type": "list",
       "values": [
-        "PipelineMicrobiome16S",
-        "PipelineMicrobiome16S"
-      ],
-    },
-    {
-      "name": "SciEnv/PyEnv List",
-      "description": "List SciEnv/PyEnv EnvironmenE",
-      "type": "list",
-      "values": [
         "miniconda3-latest",
         "miniconda2-latest"
       ]
+    },
+    {
+      "name": "Conda Env",
+      "description": "Parameter Four"
     }
   ]
 }
