@@ -1,9 +1,18 @@
 {
   "name": "05. Enable Virtual Env",
   "script_path": "/BioGUI/conf/scripts/active_env.sh",
-  "description": "Remove Local Repository",
+  "description": "Enable Virtual Env",
   "working_directory": "/headless/data",
   "parameters": [
+    {
+      "name": "Choose your virtual env",
+      "description": "List virtual env",
+      "type": "list",
+      "values": {
+        "script": "ls /headless/data"
+      },
+      "required": true
+    },
     {
       "name": "SciEnv/PyEnv List",
       "description": "List SciEnv/PyEnv EnvironmenE",
@@ -12,15 +21,6 @@
         "miniconda3-latest",
         "miniconda2-latest"
       ]
-    },
-    {
-      "name": "Choose your work repository",
-      "description": "List Work Repositories",
-      "type": "list",
-      "values": {
-        "script": "ls -d $HOME/data"
-      },
-      "required": true
     }
   ]
 }
