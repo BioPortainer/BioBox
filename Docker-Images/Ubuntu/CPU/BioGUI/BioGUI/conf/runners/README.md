@@ -103,7 +103,7 @@ Example:
 ]
 ```
 
-requires_terminal
+# requires_terminal
 (Linux only)
 Specifies, if the script should be run in pseudo terminal mode. This is useful because some programs behave differently in terminal and non-interactive modes.
 
@@ -111,7 +111,7 @@ Required: no
 Type: boolean
 Default: true
 
-bash_formatting
+# bash_formatting
 Enables ANSI escape command parsing and showing formatted output on the user interface. E.g. \033[01;31m is a bold red text
 Supported escape sequences: 16 text colors and 16 background colors, 4 text styles
 
@@ -119,7 +119,7 @@ Required: no
 Type: boolean
 Default: true for linux and mac, false otherwise
 
-parameters
+# parameters
 List of script parameters. Parameters are shown on the GUI and passed to a script exactly in the same order. Below are the all allowed parameter properties
 
 Required: no
