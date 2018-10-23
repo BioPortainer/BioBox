@@ -23,20 +23,18 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
     && echo "$USER:$PASS" | chpasswd \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && mkdir -p /.config \
-    && mkdir -p $HOME/data \
-    && mkdir -p $HOME/notebooks \
-    && mkdir -p $HOME/workdir \
-    && chown -R $USER:$USER $HOME \
+    && mkdir -p $HOME/workdir/data \
+    && mkdir -p $HOME/workdirnotebooks \
     && echo "############### Welcome to Minimal BioBox ###############" \
     >> /.config/.login \
     && echo "############## User: $USER - Pass: $PASS ##############" \
     >> /.config/.login \
     && echo " "  >> /.config/.login \
     && echo " "  >> /.config/.login \
-    && chown -R $USER:$USER $HOME
+    && chown -R $USER:$USER $HOME && chown -R $USER:$USER /.config \
 
-WORKDIR $HOME/data
+WORKDIR $HOME/workdir/data
 
 USER $USER
-VOLUME ["$HOME/data", "$HOME/notebooks"]
+VOLUME ["$HOME/workdir/data", "$HOME/notebooks"]
 CMD ["/bin/bash"]
