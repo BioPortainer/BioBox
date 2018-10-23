@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo "1"
+echo "Enabling PyEnv..."
 eval "$(pyenv init -)"
-echo "2"
+echo "Enabling Virtualenv"
 eval "$(pyenv virtualenv-init -)"
-echo "3"
+echo "Enabling $1"
 pyenv activate $1
 echo "4"
-echo "$1"
+echo "Enabling $2"
 conda activate $2
-echo "$2"
+
