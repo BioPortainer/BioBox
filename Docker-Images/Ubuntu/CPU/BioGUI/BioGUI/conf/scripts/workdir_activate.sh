@@ -1,4 +1,5 @@
 #!/bin/bash
 
 cd $@
-echo "The directory $@ was chosen as your workdir"
+work=$(pwd)
+echo "The directory $work was chosen as your workdir"
