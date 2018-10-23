@@ -43,7 +43,7 @@ Windows important: any non-batch scripts should be run as a command, e.g. 'pytho
 Example: "script_path": "/some/path/to/script.sh"
 Example2: "script_path": "python my_script.py"
 
-description
+# description
 User-friendly script description, which will be shown to a user
 Markdown with GitHub flavour can be used
 
@@ -51,38 +51,40 @@ Required: no
 Type: string
 Example: "description": "This script shuts down the server"
 
-working_directory
+# working_directory
 Working directory for the script
 
 Required: no
 Type: string
 Default: script-server directory
 
-allowed_users
+# allowed_users
 List of users, who can access the script
 
 Required: no
 Type: json array
 Default: any user
 
-output_files
+# output_files
 List of files, which will be downloadable by user after a script execution, can be:
 
-file path, with:
-* and ** wildcard support
-substitution of script parameters with $$$parameter_name (e.g. /home/me/$$$f1.txt, when f1=readme, becomes /home/me/readme.txt)
-regex pattern, for searching file path in script output:
-should be surrounded with #
-matching group number can be specified with number# (e.g. #2#)
-#any_path can be used for searching paths in the output
-if the path cannot be found, it will be ignored
-secure parameter values are protected with a mask during the search
+- file path, with:
+	- * and ** wildcard support
+	- substitution of script parameters with $$$parameter_name (e.g. /home/me/$$$f1.txt, when f1=readme, become /home/me/readme.txt)
+- regex pattern, for searching file path in script output:
+	- should be surrounded with #
+	- matching group number can be specified with number# (e.g. #2#)	
+	- #any_path can be used for searching paths in the output
+	- if the path cannot be found, it will be ignored
+	- secure parameter values are protected with a mask during the search
+	
 All the matching files are copied locally and stored for at least 24 hours. Only the same user can access the files.
 
 Required: no
 Type: array
 Example:
 
+```
 "output_files": [
 	/* Returns the file under the path */
 	"/var/log/server.log",
@@ -99,6 +101,8 @@ Example:
 	/* Searches for username='value' in the script output and builds /home/'value'/file.txt paths */
 	"/home/#1#username=(\w+)#/file.txt"
 ]
+```
+
 requires_terminal
 (Linux only)
 Specifies, if the script should be run in pseudo terminal mode. This is useful because some programs behave differently in terminal and non-interactive modes.
