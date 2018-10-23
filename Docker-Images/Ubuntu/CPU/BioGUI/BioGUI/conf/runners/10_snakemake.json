@@ -13,13 +13,6 @@
       }
     },
     {
-      "name": "--dryrun",
-      "param": "--dryrun",
-      "description": "Do not execute anything, and display what would bedone. If you have a very large workflow, use --dryrun --quiet to just print a summary of the DAG of jobs.",
-      "no_value": true,
-      "default": false
-    },
-    {
       "name": "--profile",
       "param": "--profile",
       "description": "Name of profile to use for configuring Snakemake. Snakemake will search for a corresponding folder in /etc/xdg/snakemake and /headless/.config/snakemake. Alternatively, this can be an absolute or relative path. The profile folder has to contain a file 'config.yaml'. This file can be used to set default values for command line options in YAML format. For example, '--cluster qsub' becomes 'cluster: qsub' in the YAML file. Profiles can be obtained from https://github.com/snakemake-profiles.",
@@ -30,47 +23,6 @@
       "param": "--snakefile",
       "description": "The workflow definition in a snakefile.",
       "type": "text"
-    },
-    {
-      "name": "--cores",
-      "param": "--cores",
-      "description": "Use at most N cores in parallel (default: 1). If N is omitted, the limit is set to the number of available cores.",
-      "type": "int",
-      "default": "1"
-    },
-    {
-      "name": "--local-cores",
-      "param": "--local-cores",
-      "description": "In cluster mode, use at most N cores of the host machine in parallel (default: number of CPU cores of the host). The cores are used to execute local rules. This option is ignored when not in cluster mode.",
-      "type": "int"
-    },
-    {
-      "name": "--cores",
-      "param": "--cores",
-      "description": "Preserve specific environment variable when running CommandLineTools. May be provided multiple times.",
-      "no_value": true,
-      "default": false
-    },
-    {
-      "name": "Preserve all env variable",
-      "param": "--preserve-entire-environment",
-      "description": "Preserve all environment variable when running CommandLineTools.",
-      "no_value": true,
-      "default": true
-    },
-    {
-      "name": "Delete Docker container",
-      "param": "--rm-container",
-      "description": "Delete Docker container used by jobs after they exit (default)",
-      "no_value": true,
-      "default": false
-    },
-    {
-      "name": "Do not delete Docker",
-      "param": "--leave-container",
-      "description": "Do not delete Docker container used by jobs after they exit",
-      "no_value": true,
-      "default": true
     },
     {
       "name": "Help",
@@ -87,15 +39,8 @@
       "default": false
     },
     {
-      "name": "Constant Text",
-      "description": "Constant value",
-      "param": "--const_text",
-      "constant": true,
-      "default": "constOne"
-    },
-    {
-      "name": "Simple Text",
-      "description": "Parameter Four"
+      "name": "Other parameters",
+      "description": "Use other Snakemake parameters. The parameters must be entered as they appear in the Help option and separated by single space."
     }
   ]
 }
