@@ -12,10 +12,6 @@
         "miniconda3-latest",
         "miniconda2-latest"
       ]
-    },
-    {
-      "name": "Conda Env",
-      "description": "Parameter Four"
     }
   ]
 }
