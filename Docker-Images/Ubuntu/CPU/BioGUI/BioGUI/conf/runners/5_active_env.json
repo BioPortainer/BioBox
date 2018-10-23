@@ -1,5 +1,5 @@
 {
-  "name": "06. Enable Virtual Env",
+  "name": "05. Enable Virtual Env",
   "script_path": "/BioGUI/conf/scripts/active_env.sh",
   "description": "Enable Python virtual environment (Conda)",
   "working_directory": "/headless/data",
