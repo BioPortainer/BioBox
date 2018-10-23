@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd $@
-snakemake
+cd $1
+snakemake $2
