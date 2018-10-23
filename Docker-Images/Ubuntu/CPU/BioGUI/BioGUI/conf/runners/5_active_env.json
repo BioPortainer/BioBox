@@ -5,13 +5,12 @@
   "working_directory": "/headless/data",
   "parameters": [
     {
-      "name": "Choose your virtual env",
-      "description": "List virtual env",
+      "name": "SciEnv/PyEnv List",
+      "description": "List SciEnv/PyEnv EnvironmenE",
       "type": "list",
-      "values": {
-        "script": "ls /headless/data"
-      },
-      "required": true
+      "values": [
+        "PipelineMicrobiome16S"
+      ]
     },
     {
       "name": "SciEnv/PyEnv List",
