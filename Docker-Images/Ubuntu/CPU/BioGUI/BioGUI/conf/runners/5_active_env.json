@@ -7,15 +7,6 @@
     {
       "name": "Conda Env",
       "description": "Parameter Four"
-    },
-    {
-      "name": "Simple List",
-      "description": "Parameter Five",
-      "type": "list",
-      "values": [
-        "val1",
-        "val3",
-      ]
     }
   ]
 }
