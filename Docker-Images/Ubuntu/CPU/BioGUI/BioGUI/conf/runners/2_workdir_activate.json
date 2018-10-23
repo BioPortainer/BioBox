@@ -1,7 +1,7 @@
 
 {
   "name": "02. Workdir Activate",
-  "script_path": "/BioGUI/conf/scripts/mkdir.sh",
+  "script_path": "/BioGUI/conf/scripts/workdir_activate.sh",
   "description": "Choose your work repository",
   "working_directory": "/headless/data",
   "parameters": [
