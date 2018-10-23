@@ -10,7 +10,7 @@
       "description": "Targets to build. May be rules or files.",
       "type": "list",
       "values": {
-        "script": "ls"
+        "script": "ls -d"
       }
     },
     {
