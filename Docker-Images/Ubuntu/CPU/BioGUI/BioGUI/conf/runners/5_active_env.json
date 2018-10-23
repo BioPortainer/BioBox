@@ -1,12 +1,17 @@
 {
-  "name": "05. Enable Virtual Env",
+  "name": "05. Environment Activate",
   "script_path": "/BioGUI/conf/scripts/active_env.sh",
-  "description": "Enable Virtual Env",
+  "description": "Environment Activate",
   "working_directory": "/headless/data",
   "parameters": [
     {
-      "name": "Conda Env",
-      "description": "Parameter Four"
+      "name": "Choose your work repository",
+      "description": "List Work Repositories",
+      "type": "list",
+      "values": {
+        "script": "ls /headless/data"
+      },
+      "required": true
     }
   ]
 }
