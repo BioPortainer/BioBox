@@ -20,9 +20,9 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
     && apt-get clean && apt-get autoclean && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/ \
     && locale-gen en_US.UTF-8 \
-    && export PASS="$(pwgen -1 12)" \
+    && export PASS="$(pwgen -1 12)" && groupadd fuse \
     && useradd -d $HOME --shell /bin/bash --uid $UID --user-group \
-    --groups adm,sudo $USER \
+    --groups adm,sudo,fuse $USER \
     && echo "$USER:$PASS" | chpasswd \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && mkdir -p /.config \
