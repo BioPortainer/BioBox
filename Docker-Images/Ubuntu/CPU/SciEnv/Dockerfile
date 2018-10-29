@@ -14,7 +14,7 @@ ENV SCIENV_ROOT $HOME/.scienv
 ENV PATH $SCIENV_ROOT/bin:$SCIENV_ROOT/envs:$PATH
 ENV SHELL /bin/bash
 
-RUN $SHELL git clone https://github.com/LaBiOS/scienv.git $HOME/.scienv \
+RUN git clone https://github.com/LaBiOS/scienv.git $HOME/.scienv \
         && echo 'export HOME="$HOME"' >> $HOME/.bash_profile \
         && echo 'export PATH="$HOME/.scienv/bin:$HOME/.scienv/envs:$PATH"' \
         >> $HOME/.bash_profile \
