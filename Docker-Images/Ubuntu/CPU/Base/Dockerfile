@@ -11,6 +11,9 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 ENV LANG C.UTF-8
 
+ADD .config/gotty /usr/bin
+ADD .config/gdrive /usr/bin
+
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
     --no-install-recommends bash git zip wget pwgen parallel screen \
     pv ca-certificates tmux tmate fuse gosu locales mlocate script \
