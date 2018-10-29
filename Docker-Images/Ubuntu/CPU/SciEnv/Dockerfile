@@ -15,11 +15,13 @@ ENV PATH $SCIENV_ROOT/bin:$SCIENV_ROOT/envs:$PATH
 
 RUN git clone https://github.com/LaBiOS/scienv.git $HOME/.scienv \
         && echo 'export HOME="$HOME"' >> $HOME/.bash_profile \
-        && echo 'export PATH="$HOME/.scienv/bin:$HOME/.scienv/envs:$PATH"' >> $HOME/.bash_profile \
+        && echo 'export PATH="$HOME/.scienv/bin:$HOME/.scienv/envs:$PATH"' \
+        >> $HOME/.bash_profile \
         && echo 'export SCIENV_ROOT="$HOME/.scienv"' >> $HOME/.bash_profile \
         && echo 'eval "$(scienv init -)"' >> $HOME/.bash_profile \
         && echo 'export HOME="$HOME"' >> $HOME/.bashrc \
-        && echo 'export PATH="$HOME/.scienv/bin:$HOME/.scienv/envs:$PATH"' >> $HOME/.bashrc \
+        && echo 'export PATH="$HOME/.scienv/bin:$HOME/.scienv/envs:$PATH"' \
+        >> $HOME/.bashrc \
         && echo 'export SCIENV_ROOT="$HOME/.scienv"' >> $HOME/.bashrc \
         && echo 'eval "$(scienv init -)"' >> $HOME/.bashrc \ 
         && export PATH="$HOME/.scienv/bin:$HOME/.scienv/envs:$PATH" \
