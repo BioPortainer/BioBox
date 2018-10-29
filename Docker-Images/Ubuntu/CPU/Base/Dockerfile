@@ -16,7 +16,7 @@ ADD .config/gdrive /usr/bin
 
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
     --no-install-recommends bash git zip wget pwgen parallel screen \
-    pv ca-certificates tmux tmate fuse gosu locales mlocate script \
+    pv ca-certificates tmux tmate locales mlocate script \
     && apt-key adv –keyserver keyserver.ubuntu.com \
     –recv-keys 1484120AC4E9F8A1A577AEEE97A80C63C9D8B80B \
     && add-apt-repository “deb [arch=amd64] \
@@ -25,9 +25,9 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
     && apt-get clean && apt-get autoclean && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/ \
     && locale-gen en_US.UTF-8 \
-    && export PASS="$(pwgen -1 12)" && groupadd fuse \
+    && export PASS="$(pwgen -1 12)" \
     && useradd -d $HOME --shell /bin/bash --uid $UID --user-group \
-    --groups adm,sudo,fuse $USER \
+    --groups adm,sudo $USER \
     && echo "$USER:$PASS" | chpasswd \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && mkdir -p /.config \
