@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && mkdir -p /.config \
     && mkdir -p $HOME/workdir/data \
-    && mkdir -p $HOME/workdirnotebooks \
+    && mkdir -p $HOME/workdir/notebooks \
     && echo "############### Welcome to Minimal BioBox ###############" \
     >> /.config/.login \
     && echo "############## User: $USER - Pass: $PASS ##############" \
