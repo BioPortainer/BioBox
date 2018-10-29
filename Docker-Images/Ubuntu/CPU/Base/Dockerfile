@@ -13,7 +13,10 @@ ENV LANG C.UTF-8
 
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
     --no-install-recommends bash git zip wget pwgen parallel screen \
-    pv ca-certificates tmux fuse gosu locales mlocate \
+    pv ca-certificates tmux tmate fuse gosu locales mlocate script \
+    && apt-key adv –keyserver keyserver.ubuntu.com –recv-keys 1484120AC4E9F8A1A577AEEE97A80C63C9D8B80B \
+    && add-apt-repository “deb [arch=amd64] https://osquery-packages.s3.amazonaws.com/DISTRO DISTRO main” \
+    && apt-get update && apt-get install osquery \
     && apt-get clean && apt-get autoclean && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/ \
     && locale-gen en_US.UTF-8 \
