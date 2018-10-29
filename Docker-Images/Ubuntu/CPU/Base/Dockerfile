@@ -16,7 +16,7 @@ ADD .config/gdrive /usr/local/bin/
 
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
     --no-install-recommends bash git zip wget pwgen parallel screen \
-    pv ca-certificates tmate locales mlocate \
+    pv ca-certificates tmate locales mlocate apt-utils \
     && apt-key adv –keyserver keyserver.ubuntu.com \
     –recv-keys 1484120AC4E9F8A1A577AEEE97A80C63C9D8B80B \
     && add-apt-repository “deb [arch=amd64] \
