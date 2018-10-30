@@ -15,7 +15,7 @@ USER $USER
 
 RUN eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" \
     && pyenv activate miniconda3-latest \
-    && conda install jupyter jupyterlab nb_conda -y \
+    && conda install jupyter jupyter_core jupyterlab nb_conda -y \
     && pip install bash_kernel \
     && python -m bash_kernel.install --user \
     && jupyter serverextension enable --py jupyterlab --sys-prefix \
