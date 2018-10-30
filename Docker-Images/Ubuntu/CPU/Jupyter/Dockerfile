@@ -1,7 +1,14 @@
 FROM bioportainer/supervisord:cpu
 
+USER root
+
+COPY .config/start-notebook.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/start-notebook.sh && chmod 755 /usr/local/bin/start-notebook.sh
+
+USER $USER
+
 RUN eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" \
-    && pyenv activate $PYTHON3_VERSION \
+    && pyenv activate miniconda3-latest \
     && pip install jupyter jupyterlab \
     && pip install bash_kernel \
     && python -m ipykernel install --user \
@@ -9,13 +16,21 @@ RUN eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" \
     && jupyter serverextension enable --py jupyterlab --sys-prefix \
     && pyenv deactivate \
     && pyenv rehash \
-    && pyenv activate $PYTHON2_VERSION \
+    && /bin/bash -c "exec $SHELL -l" \
+    && /bin/bash -c "source $HOME/.bashrc" \
+    && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" \
+    && pyenv activate miniconda2-latest \
     && pip install ipykernel \
     && python -m ipykernel install --user \
     && pyenv deactivate \
     && pyenv rehash \
     && /bin/bash -c "exec $SHELL -l" \
     && /bin/bash -c "source $HOME/.bashrc" \
+    && pyenv global miniconda3-latest miniconda2-latest \
+    && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" \
     && ipython profile create \
     && curl -L http://hbn.link/hb-ipython-startup-script > \
-    ~/.ipython/profile_default/startup/00-venv-sitepackages.py
+        ~/.ipython/profile_default/startup/00-venv-sitepackages.py
+
+ENV JUPYTER_TYPE lab
+ENV JUPYTER_PORT 8888
