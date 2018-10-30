@@ -15,11 +15,11 @@ USER $USER
 
 RUN eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" \
     && pyenv activate miniconda3-latest \
-    && pip install jupyter jupyterlab \
+    && conda install jupyter jupyterlab nb_conda -y \
     && pip install bash_kernel \
-    && python -m ipykernel install --user \
     && python -m bash_kernel.install --user \
     && jupyter serverextension enable --py jupyterlab --sys-prefix \
+    && conda clean -tipsy \
     && pyenv deactivate \
     && pyenv rehash \
     && /bin/bash -c "exec $SHELL -l" \
