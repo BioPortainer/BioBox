@@ -4,7 +4,12 @@ USER root
 
 ADD .config/start-notebook.sh /usr/local/bin/
 ADD .config/jupyter.conf /etc/supervisor/conf.d/jupyter.conf
-RUN chmod +x /usr/local/bin/start-notebook.sh && chmod 755 /usr/local/bin/start-notebook.sh
+RUN chmod +x /usr/local/bin/start-notebook.sh \
+    && chmod 755 /usr/local/bin/start-notebook.sh \
+    && apt-get update && apt-get install -y \
+    --allow-unauthenticated --no-install-recommends curl \
+    && apt-get clean && apt-get autoclean && apt-get autoremove \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
 
 USER $USER
 
