@@ -2,7 +2,8 @@ FROM bioportainer/supervisord:cpu
 
 USER root
 
-COPY .config/start-notebook.sh /usr/local/bin/
+ADD .config/start-notebook.sh /usr/local/bin/
+ADD .config/jupyter.conf /etc/supervisor/conf.d/jupyter.conf
 RUN chmod +x /usr/local/bin/start-notebook.sh && chmod 755 /usr/local/bin/start-notebook.sh
 
 USER $USER
