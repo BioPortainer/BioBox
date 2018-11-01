@@ -41,4 +41,3 @@ WORKDIR $HOME/workdir/data
 USER $USER
 VOLUME ["$HOME/workdir/data", "$HOME/workdir/notebooks"]
 CMD ["/bin/bash"]
-USER root
