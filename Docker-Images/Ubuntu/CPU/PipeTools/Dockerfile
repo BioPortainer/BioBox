@@ -7,3 +7,7 @@ RUN eval "$(pyenv init -)" \
     && conda clean -tipsy && pyenv deactivate
     
 USER root
+
+RUN chmod +x /tmp
+
+USER $USER
