@@ -8,6 +8,6 @@ RUN eval "$(pyenv init -)" \
     
 USER root
 
-RUN chmod +x /tmp
+RUN chown -R $USER:$USER /tmp
 
 USER $USER
