@@ -5,5 +5,3 @@ RUN eval "$(pyenv init -)" \
     && pyenv activate $PYTHON3_VERSION \
     && conda install -y snakemake-minimal cwltool nextflow \
     && conda clean -tipsy && pyenv deactivate
-
-USER $USER
