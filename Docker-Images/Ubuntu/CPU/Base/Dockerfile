@@ -11,12 +11,6 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 ENV LANG C.UTF-8
 
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-locale-gen en_US.UTF-8
-dpkg-reconfigure locales
-
 ADD .config/gotty /usr/local/bin/
 ADD .config/gdrive /usr/local/bin/
 
