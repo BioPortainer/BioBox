@@ -1,5 +1,7 @@
 FROM bioportainer/pyenv:cpu
 
+USER root
+
 RUN apt-get update && apt-get install -y gnupg debconf curl \
   && echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" \
   | debconf-set-selections \
