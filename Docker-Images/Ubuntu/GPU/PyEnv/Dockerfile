@@ -40,7 +40,6 @@ RUN scienv install pyenv \
     && conda config --add channels conda-forge \
     && conda config --add channels bioconda \
     && conda config --add channels biobuilds \
-    && pip install typing tornado \
     && conda update --all && conda clean -tipsy \
     && pyenv deactivate \
     && chown -R $USER:$USER $HOME \
@@ -54,7 +53,6 @@ RUN scienv install pyenv \
     && conda config --add channels conda-forge \
     && conda config --add channels bioconda \
     && conda config --add channels biobuilds \
-    && pip install supervisor \
     && conda update --all && conda clean -tipsy \
     && pyenv deactivate \
     && chown -R $USER:$USER $HOME
