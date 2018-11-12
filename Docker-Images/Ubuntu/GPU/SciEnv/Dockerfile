@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
 USER $USER        
         
 ENV SCIENV_ROOT $HOME/.scienv
-ENV PATH $SCIENV_ROOT/bin:$SCIENV_ROOT/envs:$CUDA_PATH:$PATH
+ENV PATH $SCIENV_ROOT/bin:$SCIENV_ROOT/envs:$PATH
 
 RUN git clone https://github.com/LaBiOS/scienv.git $HOME/.scienv \
         && echo 'export HOME="$HOME"' >> $HOME/.bash_profile \
@@ -33,3 +33,5 @@ USER root
 
 RUN apt-get clean && apt-get autoclean && apt-get autoremove \
         && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
+
+USER $USER
