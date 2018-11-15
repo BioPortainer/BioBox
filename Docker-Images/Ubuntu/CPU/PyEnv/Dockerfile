@@ -12,8 +12,6 @@ ENV PATH $SCIENV_ROOT/bin:$SCIENV_ROOT/envs:$PYENV:$PATH
 ENV PYTHON3_VERSION miniconda3-latest
 ENV PYTHON2_VERSION miniconda2-latest
 
-USER $USER
-
 RUN scienv install pyenv \
     && echo 'eval "$(pyenv init -)"' >> $HOME/.bash_profile \
     && echo 'eval "$(pyenv virtualenv-init -)"' >> $HOME/.bash_profile \
