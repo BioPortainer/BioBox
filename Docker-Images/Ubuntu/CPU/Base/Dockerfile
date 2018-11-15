@@ -13,4 +13,13 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
     && echo "LC_ALL=en_US.UTF-8" >> /etc/environment \
     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
     && echo "LANG=en_US.UTF-8" > /etc/ \
-    && locale-gen en_US.UTF-8
+    && locale-gen en_US.UTF-8 \
+    && dpkg-reconfigure locales \
+    && mkdir -p /.config \
+    && mkdir -p $HOME/workdir/data \
+    && mkdir -p $HOME/workdir/notebooks
+
+WORKDIR $HOME/workdir/data
+
+VOLUME ["$HOME/workdir/data", "$HOME/workdir/notebooks"]
+CMD ["/bin/bash"]
