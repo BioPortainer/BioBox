@@ -4,13 +4,9 @@ FROM ubuntu:18.04
 ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/bash
 ENV HOME /root
-ENV LANG en_US.UTF-8  
-ENV LANGUAGE en_US:en  
-ENV LC_ALL en_US.UTF-8
-ENV LANG C.UTF-8
 
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
-    --no-install-recommends bash git zip wget \
+    --no-install-recommends bash git zip wget libssl1.0.0 \
     ca-certificates locales mlocate debconf curl \
     && apt-get clean && apt-get autoclean && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/ \
