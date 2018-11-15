@@ -1,4 +1,4 @@
-FROM bioportainer/pipetools:cpu
+FROM bioportainer/pyenv:cpu
 
 USER root
 
@@ -18,6 +18,6 @@ RUN eval "$(pyenv init -)" \
     && pip install supervisor superlance superslacker \
     && pyenv deactivate
     
-EXPOSE 9001
+EXPOSE 6000
 VOLUME ["/etc/supervisor/conf.d/", "/.config/"]
 CMD ["/start.sh"]
