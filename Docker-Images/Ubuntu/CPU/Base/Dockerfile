@@ -17,8 +17,7 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
     && locale-gen en_US.UTF-8 && dpkg-reconfigure locales \
     && mkdir -p /.config \
     && mkdir -p $HOME/workdir/data \
-    && mkdir -p $HOME/workdir/notebooks \
-    && chown -R $USER:$USER $HOME && chown -R $USER:$USER /.config
+    && mkdir -p $HOME/workdir/notebooks
 
 WORKDIR $HOME/workdir/data
 
