@@ -22,6 +22,5 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
         && export PATH="$HOME/.scienv/bin:$HOME/.scienv/envs:$PATH" \
         && eval "$($HOME/.scienv/bin/scienv init -)" \
         && /bin/bash -c "exec $SHELL -l" \
-        && chown -R $USER:$USER $HOME \
         && apt-get clean && apt-get autoclean && apt-get autoremove \
         && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
