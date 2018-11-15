@@ -1,23 +1,23 @@
-FROM bioportainer/pyenv:cuda
+FROM bioportainer/supervisord:gpu
 
 USER root
 
-ADD .config/start.sh /
-ADD .config/supervisord.conf /.config/
-ADD .config/supervisor.conf /etc/supervisor/conf.d/
+ADD BioGUI /BioGUI
+ADD .config/biogui.conf /etc/supervisor/conf.d/biogui.conf
 
-RUN mkdir -p /.config/supervisord \
-    && chmod +x /start.sh && chown $USER:$USER /start.sh \
-    && chown -R $USER:$USER /.config
-    
+RUN chmod -R +x /BioGUI/conf/scripts/ \
+    && chown -R $USER:$USER /BioGUI \
+    && mkdir $HOME/BioGUI \
+    && ln -s /BioGUI/conf/scripts/ $HOME/BioGUI/scripts \
+    && ln -s /BioGUI/conf/runners/ $HOME/BioGUI/runners \
+    && chown -R $USER:$USER $HOME/BioGUI
+
 USER $USER
 
 RUN eval "$(pyenv init -)" \
     && eval "$(pyenv virtualenv-init -)" \
-    && pyenv activate $PYTHON2_VERSION \
-    && pip install supervisor superlance superslacker \
+    && pyenv activate $PYTHON3_VERSION \
+    && pip install tornado typing \
     && pyenv deactivate
     
-EXPOSE 6000
-VOLUME ["/etc/supervisor/conf.d/", "/.config/"]
-CMD ["/start.sh"]
+EXPOSE 5000
