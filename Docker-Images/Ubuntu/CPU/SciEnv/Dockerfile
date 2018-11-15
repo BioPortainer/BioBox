@@ -1,15 +1,14 @@
 FROM bioportainer/base:cpu
 
+ENV SCIENV_ROOT $HOME/.scienv
+ENV PATH $SCIENV_ROOT/bin:$SCIENV_ROOT/envs:$PATH
+
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
         --no-install-recommends libbz2-dev libc-dev-bin libc6-dev \
         libreadline-dev libreadline6-dev libsqlite3-dev libssl-dev \
         libtinfo-dev zlib1g-dev libcurl4-openssl-dev libxml2-dev \
-        libxslt1-dev libyaml-dev libffi-dev    
-        
-ENV SCIENV_ROOT $HOME/.scienv
-ENV PATH $SCIENV_ROOT/bin:$SCIENV_ROOT/envs:$PATH
-
-RUN git clone https://github.com/LaBiOS/scienv.git $HOME/.scienv \
+        libxslt1-dev libyaml-dev libffi-dev \
+        && git clone https://github.com/LaBiOS/scienv.git $HOME/.scienv \
         && echo 'export HOME="$HOME"' >> $HOME/.bash_profile \
         && echo 'export PATH="$HOME/.scienv/bin:$HOME/.scienv/envs:$PATH"' \
         >> $HOME/.bash_profile \
