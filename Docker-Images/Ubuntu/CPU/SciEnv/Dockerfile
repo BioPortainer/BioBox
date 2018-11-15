@@ -1,14 +1,10 @@
 FROM bioportainer/base:cpu
 
-USER root
-
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
         --no-install-recommends libbz2-dev libc-dev-bin libc6-dev \
         libreadline-dev libreadline6-dev libsqlite3-dev libssl-dev \
         libtinfo-dev zlib1g-dev libcurl4-openssl-dev libxml2-dev \
-        libxslt1-dev libyaml-dev libffi-dev
-        
-USER $USER        
+        libxslt1-dev libyaml-dev libffi-dev    
         
 ENV SCIENV_ROOT $HOME/.scienv
 ENV PATH $SCIENV_ROOT/bin:$SCIENV_ROOT/envs:$PATH
@@ -27,11 +23,6 @@ RUN git clone https://github.com/LaBiOS/scienv.git $HOME/.scienv \
         && export PATH="$HOME/.scienv/bin:$HOME/.scienv/envs:$PATH" \
         && eval "$($HOME/.scienv/bin/scienv init -)" \
         && /bin/bash -c "exec $SHELL -l" \
-        && chown -R $USER:$USER $HOME
-
-USER root
-
-RUN apt-get clean && apt-get autoclean && apt-get autoremove \
+        && chown -R $USER:$USER $HOME \
+        && apt-get clean && apt-get autoclean && apt-get autoremove \
         && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
-
-USER $USER
