@@ -27,7 +27,6 @@ RUN scienv install pyenv \
     && /bin/bash -c "source $HOME/.bashrc" \
     && /bin/bash -c "source $HOME/.bash_profile" \
     && /bin/bash -c "source $PYENV_ROOT/completions/pyenv.bash" \
-    && chown -R $USER:$USER $HOME \
     && eval "$(pyenv init -)" \
     && eval "$(pyenv virtualenv-init -)" \
     && pyenv install $PYTHON3_VERSION \
@@ -40,7 +39,6 @@ RUN scienv install pyenv \
     && conda config --add channels biobuilds \
     && conda update --all && conda clean -tipsy \
     && pyenv deactivate \
-    && chown -R $USER:$USER $HOME \
     && eval "$(pyenv init -)" \
     && eval "$(pyenv virtualenv-init -)" \
     && pyenv install $PYTHON2_VERSION \
@@ -52,5 +50,4 @@ RUN scienv install pyenv \
     && conda config --add channels bioconda \
     && conda config --add channels biobuilds \
     && conda update --all && conda clean -tipsy \
-    && pyenv deactivate \
-    && chown -R $USER:$USER $HOME
+    && pyenv deactivate
