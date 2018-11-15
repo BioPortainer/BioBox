@@ -1,7 +1,5 @@
 FROM bioportainer/base:cpu
 
-USER root
-
 ENV CUDA_VERSION 10.0.130
 ENV CUDA_PKG_VERSION 10-0=$CUDA_VERSION-1
 ENV NVIDIA_VISIBLE_DEVICES all
@@ -20,5 +18,3 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
     && ln -s cuda-10.0 /usr/local/cuda \
     && apt-get clean && apt-get autoclean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
-
-USER $USER
