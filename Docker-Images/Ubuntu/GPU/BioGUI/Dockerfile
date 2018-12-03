@@ -21,3 +21,4 @@ RUN eval "$(pyenv init -)" \
     && pyenv deactivate
     
 EXPOSE 5000
+EXPOSE 6000
