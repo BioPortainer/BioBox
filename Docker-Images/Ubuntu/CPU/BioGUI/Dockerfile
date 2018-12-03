@@ -14,3 +14,5 @@ RUN chmod -R +x /BioGUI/conf/scripts/ \
     && pyenv deactivate
     
 EXPOSE 5000
+EXPOSE 7000
+
