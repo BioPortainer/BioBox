@@ -21,5 +21,5 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
 
 WORKDIR $HOME/workdir/data
 
-VOLUME ["$HOME/workdir/data", "$HOME/workdir/notebooks"]
+VOLUME ["$HOME/workdir/data"]
 CMD ["/bin/bash"]
