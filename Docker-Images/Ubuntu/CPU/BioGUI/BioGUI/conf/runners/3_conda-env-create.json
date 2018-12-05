@@ -2,7 +2,7 @@
   "name": "03. Conda Environment Create",
   "script_path": "/BioGUI/conf/scripts/conda-env-create.sh",
   "description": "Create the environment from the environment.yml file",
-  "working_directory": "/headless/data",
+  "working_directory": "/root/workdir/data",
   "parameters": [
     {
       "name": "package_spec",
