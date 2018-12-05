@@ -8,6 +8,7 @@ ENV HOME /root
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
     --no-install-recommends bash git zip wget libssl1.0.0 \
     ca-certificates locales mlocate debconf curl build-essential \
+    curl vim bzip2 sudo automake cmake sed grep x11-utils \
     && apt-get clean && apt-get autoclean && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/ \
     && echo "LC_ALL=en_US.UTF-8" >> /etc/environment \
