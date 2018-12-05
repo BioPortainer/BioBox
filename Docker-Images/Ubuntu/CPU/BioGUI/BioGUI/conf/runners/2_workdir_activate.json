@@ -3,14 +3,14 @@
   "name": "02. Workdir Activate",
   "script_path": "/BioGUI/conf/scripts/workdir_activate.sh",
   "description": "Choose your work repository",
-  "working_directory": "/headless/data",
+  "working_directory": "/root/workdir/data",
   "parameters": [
     {
       "name": "Choose your work repository",
       "description": "List Work Repositories",
       "type": "list",
       "values": {
-        "script": "ls /headless/data"
+        "script": "ls /root/workdir/data"
       },
       "required": true
     }
