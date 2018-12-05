@@ -1,5 +1,5 @@
 {
-  "name": "05. Environment Activate",
+  "name": "03. Environment Activate",
   "script_path": "/BioGUI/conf/scripts/active_env.sh",
   "description": "Environment Activate",
   "working_directory": "/root/workdir/data",
