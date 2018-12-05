@@ -2,7 +2,7 @@
   "name": "01. Clone GIT Repository",
   "script_path": "/BioGUI/conf/scripts/git-clone.sh",
   "description": "GIT Clone Repository",
-  "working_directory": "/headless/data",
+  "working_directory": "/root/workdir/data",
   "parameters": [
     {
       "name": "GIT Repository",
