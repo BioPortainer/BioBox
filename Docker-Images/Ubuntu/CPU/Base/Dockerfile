@@ -5,10 +5,13 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/bash
 ENV HOME /root
 
-RUN apt-get update && apt-get install -y --allow-unauthenticated \
+RUN apt-get update \
+    && LIBPNG="$(apt-cache depends libpng-dev | grep 'Depends: libpng' | awk '{print $2}')" \
+    && apt-get install -y --allow-unauthenticated \
     --no-install-recommends bash git zip wget libssl1.0.0 \
     ca-certificates locales mlocate debconf curl build-essential \
-    curl vim bzip2 sudo automake cmake sed grep x11-utils \
+    curl vim bzip2 sudo automake cmake sed grep x11-utils xvfb openssl \
+    libxtst6 libxcomposite1 $LIBPNG stunnel \
     && apt-get clean && apt-get autoclean && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/ \
     && echo "LC_ALL=en_US.UTF-8" >> /etc/environment \
