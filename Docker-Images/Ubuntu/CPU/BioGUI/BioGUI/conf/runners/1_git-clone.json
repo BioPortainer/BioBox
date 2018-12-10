@@ -9,26 +9,29 @@
       "param": "clone",
       "description": "GIT Repository",
       "type": "text",
-      "required": false 
+      "required": true 
     },
     {                  
-      "name": "Origin",   
-      "param": "--origin",                                  
+      "name": "Origin",                                    
       "description": "use <name> instead of 'origin' to track upstream",
       "required": false
     },
     {
       "name": "Branch",
-      "param": "--branch",
       "description": "checkout <branch> instead of the remote's HEAD",  
       "required": false
     },
+    {                  
+      "name": "Others Parameters",
+      "description": "others parameters",
+      "required": false
+    },
     {
-      "name": "Help",
-      "param": "--help",
-      "description": "Help.",
+      "name": "Progress",
+      "param": "--progress",
+      "description": "Progress report.",
       "no_value": true,
-      "default": false
+      "default": true
     },
     {
       "name": "Verbose",
@@ -38,11 +41,11 @@
       "default": true
     },
     {
-      "name": "Progress",
-      "param": "--progress",
-      "description": "Progress report.",
+      "name": "Help",
+      "param": "--help",
+      "description": "Help.",
       "no_value": true,
-      "default": true
+      "default": false
     }
   ]
 }
