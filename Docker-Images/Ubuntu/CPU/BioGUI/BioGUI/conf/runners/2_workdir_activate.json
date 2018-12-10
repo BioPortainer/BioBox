@@ -6,8 +6,8 @@
   "working_directory": "/root/workdir/data",
   "parameters": [
     {
-      "name": "Choose your work repository",
-      "description": "List Work Repositories",
+      "name": "Choose GIT Repository",
+      "description": "List GIT Repositories",
       "type": "list",
       "values": {
         "script": "ls /root/workdir/data"
